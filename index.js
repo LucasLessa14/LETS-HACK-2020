@@ -1,20 +1,17 @@
-const port = 3333;
+const port = 4001;
 
-// const bodyParser = require('body-parser');
 const express = require('express');
-const routes = require('./routes');
-const cors = require('cors');
-
-require('./database/index');
+const bodyParser = require('body-parser');
 
 const app = express();
 
-app.use(cors());
-// app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
-app.use(routes);
+require('./app/controllers/index')(app);
+
+app.get('/', (req, res) => res.send("ok!"));
 
 app.listen(port, () => {
-    console.log(`API is running on port ${ port }.`);
+  console.log(`BACKEND is running on port ${ port }.`)
 });

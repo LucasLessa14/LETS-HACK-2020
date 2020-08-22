@@ -1,7 +1,7 @@
 {
-  "name": "lets-hack-2020",
+  "name": "node",
   "version": "1.0.0",
-  "description": "Hackathon LET'S HACK 2020",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
@@ -9,21 +9,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LucasLessa14/LETS-HACK-2020.git"
+    "url": "git+ssh://git@github.com/LucasLessa14/docker-node-mongo.git"
   },
   "author": "Lucas Lessa",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/LucasLessa14/LETS-HACK-2020/issues"
+    "url": "https://github.com/LucasLessa14/docker-node-mongo/issues"
   },
-  "homepage": "https://github.com/LucasLessa14/LETS-HACK-2020#readme",
+  "homepage": "https://github.com/LucasLessa14/docker-node-mongo#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "pg": "^8.3.2",
-    "pg-hstore": "^2.3.3",
-    "sequelize": "^6.3.4",
-    "sequelize-cli": "^6.2.0"
+    "fs": "0.0.1-security",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.27",
+    "path": "^0.12.7"
   }
 }
