@@ -36,7 +36,7 @@ router.post('/register', async (req, res) => {
     }
 });
 
-router.get('/authenticate', async (req, res) => {
+router.post('/authenticate', async (req, res) => {
     const { email, password } = req.body;
 
     const user = await User.findOne({ email }).select('+password');
@@ -53,6 +53,16 @@ router.get('/authenticate', async (req, res) => {
         user, 
         token: generateToken({ id: user.id }),
     });
+});
+
+router.get('/', async (req, res) => {
+
+    const users = await User.find();
+
+    if (!users)
+        return res.status(400).send({ error: 'User not found' });
+
+    res.send(users);
 });
 
 module.exports = (app) => app.use('/auth', router);
